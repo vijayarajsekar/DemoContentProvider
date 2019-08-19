@@ -1,4 +1,4 @@
-package com.demo.cp;
+package com.demo.cp.type_one;
 
 import android.content.Context;
 import android.content.pm.PackageManager;
@@ -13,6 +13,8 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
+
+import com.demo.cp.R;
 
 import static android.Manifest.permission.READ_CONTACTS;
 

@@ -12,17 +12,29 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".type_one.MainActivity">
+            <!--<intent-filter>-->
+            <!--<action android:name="android.intent.action.MAIN" />-->
+
+            <!--<category android:name="android.intent.category.LAUNCHER" />-->
+            <!--</intent-filter>-->
+        </activity>
+
+        <activity
+            android:name=".type_two.ui.UsersList"
+            android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".type_two.ui.UserDetails"
+            android:windowSoftInputMode="stateVisible|adjustResize"></activity>
 
         <provider
             android:name=".type_two.provider.UserDetailsProvider"
-            android:authorities="com.demo.cp.userprovider" >
-        </provider>
+            android:authorities="com.demo.cp.userprovider"></provider>
 
     </application>
 

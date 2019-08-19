@@ -3,38 +3,39 @@
     package="com.demo.cp">
 
     <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
 
     <application
+        android:name=".DemoApp"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".type_one.MainActivity">
-            <!--<intent-filter>-->
-            <!--<action android:name="android.intent.action.MAIN" />-->
 
-            <!--<category android:name="android.intent.category.LAUNCHER" />-->
-            <!--</intent-filter>-->
-        </activity>
-
-        <activity
-            android:name=".type_two.ui.UsersList"
-            android:label="@string/app_name">
+        <activity android:name=".HomeScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity android:name=".serviceDemo.ui.ServiceDemoActivity" />
+
+        <activity android:name=".type_one.DemoSystemContentProvider" />
+
+        <activity android:name=".type_two.ui.UsersList" />
+
         <activity
             android:name=".type_two.ui.UserDetails"
-            android:windowSoftInputMode="stateVisible|adjustResize"></activity>
+            android:windowSoftInputMode="stateVisible|adjustResize" />
+
+        <service android:name=".serviceDemo.services.DemoService" />
 
         <provider
             android:name=".type_two.provider.UserDetailsProvider"
-            android:authorities="com.demo.cp.userprovider"></provider>
+            android:authorities="com.demo.cp.userprovider" />
 
     </application>
 

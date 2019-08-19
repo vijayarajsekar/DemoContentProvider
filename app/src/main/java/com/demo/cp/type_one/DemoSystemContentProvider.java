@@ -18,7 +18,7 @@ import com.demo.cp.R;
 
 import static android.Manifest.permission.READ_CONTACTS;
 
-public class MainActivity extends AppCompatActivity {
+public class DemoSystemContentProvider extends AppCompatActivity {
 
     private static final int PERMISSION_REQ_CODE = 100;
     private Context mContext;
@@ -60,6 +60,7 @@ public class MainActivity extends AppCompatActivity {
             } else {
                 Toast.makeText(mContext, "Permission Denied", Toast.LENGTH_SHORT).show();
                 mContactName.setText("No Contacts Available");
+                finish();
             }
         }
     }

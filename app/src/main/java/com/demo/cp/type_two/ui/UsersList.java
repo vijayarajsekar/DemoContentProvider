@@ -47,19 +47,10 @@ public class UsersList extends ListActivity implements LoaderManager.LoaderCallb
         mAddUser.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                createTodo();
+                createUser();
             }
         });
     }
-
-    // Create the menu based on the XML defintion
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.listmenu, menu);
-        return true;
-    }
-
 
     @Override
     public boolean onContextItemSelected(MenuItem item) {
@@ -76,7 +67,7 @@ public class UsersList extends ListActivity implements LoaderManager.LoaderCallb
         return super.onContextItemSelected(item);
     }
 
-    private void createTodo() {
+    private void createUser() {
         Intent i = new Intent(this, UserDetails.class);
         startActivityForResult(i, ACTIVITY_CREATE);
     }
@@ -86,8 +77,8 @@ public class UsersList extends ListActivity implements LoaderManager.LoaderCallb
     protected void onListItemClick(ListView l, View v, int position, long id) {
         super.onListItemClick(l, v, position, id);
         Intent i = new Intent(this, UserDetails.class);
-        Uri todoUri = Uri.parse(UserDetailsProvider.CONTENT_URI + "/" + id);
-        i.putExtra(UserDetailsProvider.CONTENT_ITEM_TYPE, todoUri);
+        Uri muserDetailsUri = Uri.parse(UserDetailsProvider.CONTENT_URI + "/" + id);
+        i.putExtra(UserDetailsProvider.CONTENT_ITEM_TYPE, muserDetailsUri);
 
         // Activity returns an result if called with startActivityForResult
         startActivityForResult(i, ACTIVITY_EDIT);

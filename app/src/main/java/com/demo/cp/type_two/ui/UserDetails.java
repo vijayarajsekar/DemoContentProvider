@@ -108,11 +108,11 @@ public class UserDetails extends AppCompatActivity {
         values.put(dbConstants.COLUMN_AGE, mUserAge);
 
         if (mUserUri == null) {
-            // New todo
+            // New User
             mUserUri = getContentResolver().insert(
                     UserDetailsProvider.CONTENT_URI, values);
         } else {
-            // Update todo
+            // Update User
             getContentResolver().update(mUserUri, values, null, null);
         }
     }
